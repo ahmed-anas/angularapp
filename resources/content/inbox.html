@@ -1,0 +1,100 @@
+<div ui-content-for="title">
+  <span>Inbox</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="section">
+
+<ui-state id='activeTab' default='1'></ui-state>
+
+      <div class="btn-group justified nav-tabs">
+        <a ui-set="{'activeTab': 1}" 
+            ui-class="{'active': activeTab == 1}" class="btn btn-default">Available</a>
+
+        <a ui-set="{'activeTab': 2}" 
+            ui-class="{'active': activeTab == 2}" class="btn btn-default">Completed</a>
+
+     
+      </div>  
+
+      <div ui-if="activeTab == 1">
+     
+
+
+<div class="panel-group" 
+        
+        ui-state='myAccordion' 
+        ui-default='2'>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" ui-set="{'myAccordion': 1}">
+        
+            <h4 class="panel-title">
+                Review Change in Condition
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 1">
+            <div class="panel-body">
+              Jennifer Davis (66)  - Loss of Appetite/Tired on 1/29/2016
+            </div>
+          </div>
+
+
+          <div class="panel-heading" ui-set="{'myAccordion': 2}">
+        
+            <h4 class="panel-title">
+                Review Change in Condition
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 2">
+            <div class="panel-body">
+              Stuart Valero (84)  - Complains of New or Worsening Pain on 1/29/2016
+            </div>
+          </div>
+
+
+          <div class="panel-heading" ui-set="{'myAccordion': 3}">
+        
+            <h4 class="panel-title">
+                Evaluate Condition Status
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 3">
+            <div class="panel-body">
+              Jennifer Davis (66)  - Loss of Appetite/Tired on 1/29/2016
+              Dr. Autry responsed with a suggestion of warm blankets.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+
+      </div>
+
+      <div ui-if="activeTab == 2">
+        <h3 class="page-header"></h3>
+        <p>No Tasks to Show</p>
+      </div>
+
+
+
+
+
+
+      
+
+
+
+
+    </div>
+  </div>
+</div>

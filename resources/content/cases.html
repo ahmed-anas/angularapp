@@ -1,0 +1,122 @@
+<div ui-content-for="title">
+  <span>Inbox</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="section">
+
+<ui-state id='activeTab' default='1'></ui-state>
+
+      <div class="btn-group justified nav-tabs">
+        <a ui-set="{'activeTab': 1}" 
+            ui-class="{'active': activeTab == 1}" class="btn btn-default">Open</a>
+
+        <a ui-set="{'activeTab': 2}" 
+            ui-class="{'active': activeTab == 2}" class="btn btn-default">Closed</a>
+
+     
+      </div>  
+
+      <div ui-if="activeTab == 1">
+     
+
+
+<div class="panel-group" 
+        
+        ui-state='myAccordion' 
+        ui-default='2'>
+
+        <div class="panel panel-default">
+          <div class="panel-heading" ui-set="{'myAccordion': 1}">
+        
+            <h4 class="panel-title">
+                Change in Condition - Jennifer Davis
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 1">
+            <div class="panel-body">
+            <h1>Jennifer Davis (66)</h1>
+            <ul>
+  <li>Loss of Appetite/Tired on 1/29/2016</li>
+  <li type="a">Current status - Awaiting Physician Review for 20 of 60mins</li>
+  <li>Next task - order sets</li>
+</ul>
+              
+              
+              
+            </div>
+          </div>
+
+
+          <div class="panel-heading" ui-set="{'myAccordion': 2}">
+        
+            <h4 class="panel-title">
+                Change in Condition -  Stuart Valero
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 2">
+            <div class="panel-body">
+              Stuart Valero (84)  - Complains of New or Worsening Pain on 1/29/2016
+              Current status - awaiting Nurse triage for 2days of 1hr - LATE!
+            </div>
+          </div>
+
+
+          <div class="panel-heading" ui-set="{'myAccordion': 3}">
+        
+            <h4 class="panel-title">
+                Patient Admission - George Taylor
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 3">
+            <div class="panel-body">
+              Next Task - awaiting bed assignment
+            </div>
+          </div>
+
+
+          <div class="panel-heading" ui-set="{'myAccordion': 4}">
+        
+            <h4 class="panel-title">
+                Complaint - Food and Beverage Service
+            </h4>
+          </div>
+
+          <div ui-if="myAccordion == 4">
+            <div class="panel-body">
+              The family of Albert Green filed a complaint: Diet restrictions not being adhered too.
+              Next task - Review of patient admission survey
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      </div>
+
+      <div ui-if="activeTab == 2">
+        <h3 class="page-header"></h3>
+        <p>No Tasks to Show</p>
+      </div>
+
+
+
+
+
+
+      
+
+
+
+
+    </div>
+  </div>
+</div>
