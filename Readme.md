@@ -1,6 +1,6 @@
-We purpose of this project is to build sample mobile application we can use internally to do a mobile app design project.  This is project is essentially going to create a live requirements document.  We are going to build a test mobile app using Angular/Bootstrp using data from our business REST API in various mobile friendly behaviors using an Angular/Bootstrap based extension called mobileangular.ui.  
+We purpose of this project is to build a sample mobile application we can use internally to do a mobile app design project.  This is project is essentially going to create a live requirements document.  We are going to build a test mobile app with Angular/Bootstrp using data from our business REST API in various mobile friendly behaviors using an Angular/Bootstrap based extension called mobileangular.ui.  
 
-After we bind data from our API to the behaviors we will convene our design team and customers to "feel" how the data renders in different behaviours.  From there we will come back to you to make new changes, etc.  Eventually this will be the finished product of a mobile implmentation that we can deploy to our customers.
+After we bind data from our API to the behaviors we will convene our design team and customers to "feel" how the data renders in different behaviors.  From there we will come back to you to make new changes, etc.  Eventually this will be the finished product of a mobile implmentation that we can deploy to our customers.
 
 The project comes with a basic angular.js SPA application in the attached .zip file.  The code in the file is just a slight reorginzation of the code at:
 http://mobileangularui.com/docs/
