@@ -1,0 +1,37 @@
+<div ui-content-for="title">
+  <span>Accordion</span>
+</div>
+
+<div ng-controller="ProcessesController" class="scrollable">
+    <div class="scrollable-content">
+        <div class="section">
+            <div class="panel-group" ng-init="activeTabs = []">
+                <div class="panel panel-default" ng-repeat="process in processes">
+                    <div class="panel-heading"  ng-click="activeTabs.indexOf(process.id) >=0?activeTabs.splice(activeTabs.indexOf(process.id),1):activeTabs.push(process.id)"  >
+
+                        <h4 class="panel-title clearfix">
+                            {{process.displayName}} | {{process.deploymentDate | simpleDate}}
+                            
+                            <span class="pull-right">
+                                Configuration State: 
+                                <span class="text-capitalize"
+                                    ng-class="{
+                                        'text-success': process.configurationState.toUpperCase() == 'RESOLVED',
+                                        'text-danger': process.configurationState.toUpperCase() != 'RESOLVED' 
+                                    }">
+                                    {{process.configurationState}}
+                                </span>
+                            </span>
+                        </h4>
+                    </div>
+
+                    <div ng-if="activeTabs.indexOf(process.id) >= 0">
+                        <div class="panel-body">
+                        {{process.displayDescription | emptyDescription}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div ui-content-for="title">
+  <span>Processes</span>
+</div>
+
+<div ng-controller="ProcessesController" class="scrollable">
+    <div class="scrollable-content">
+        <div class="section" ng-init="initialCopy = processes">
+            <table st-safe-src="processes" st-table="initialCopy" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th st-sort="id" st-sort-default="true"> ID </th>
+                        <th st-sort="displayName"> Name </th>
+                        <th st-sort="deploymentDate"> Deployment Date </th>
+                        <th st-sort="configurationState"> Configuration State </th>
+                        <th > Description </th>
+                    </tr>
+                    
+                    <tr>
+                        <th>
+                            <input st-search="id" placeholder="Filter ID" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="displayName" placeholder="Filter Name" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th></th>
+                        <th>
+                            <input st-search="configurationState" placeholder="Filter configurationState" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr ng-repeat="process in initialCopy">
+                        <td>{{process.id}}</td>
+                        <td>{{process.displayName}}</td>
+                        <td>{{process.deploymentDate | simpleDate}}</td>
+                        <td class="text-capitalize" ng-class="{
+                                    'text-success': process.configurationState.toUpperCase() == 'RESOLVED',
+                                    'text-danger': process.configurationState.toUpperCase() != 'RESOLVED' 
+                            }">
+                            {{process.configurationState}}
+                        </td>
+                        <td>{{process.description | emptyDescription}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </div>
+    </div>
+</div>

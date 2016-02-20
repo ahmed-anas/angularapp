@@ -1,0 +1,24 @@
+<div ui-if="displayOverlay" class="modal modal-overlay">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close"
+                ui-turn-off="displayOverlay">&times;</button>
+        <h4 class="modal-title">{{Ui.get('displayOverlayTask').displayName}}</h4>
+      </div>
+      <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-3" ng-repeat="(key,value) in Ui.get('displayOverlayTask')">
+                    <div class="row  section section-break">
+                        <div class="col-xs-6 overlay-column text-capitalize"><strong>{{key | toReadableFormat}}</strong></div>
+                        <div class="col-xs-6 overlay-column">{{value}}</div>
+                    </div>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button ui-turn-off="displayOverlay" class="btn btn-default">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

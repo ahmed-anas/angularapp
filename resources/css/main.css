@@ -1,0 +1,24 @@
+.st-sort-descent:after{
+    content: '\25BC';
+}
+
+.st-sort-ascent:after{
+    content: '\25B2';
+}
+
+.overlay-column{
+    word-wrap: break-word;
+    -ms-word-wrap: break-word;
+    
+    height: 4em;
+    overflow-y: auto;
+}
+
+.modal-overlay{
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+table[st-table] th{
+    cursor: pointer;
+}

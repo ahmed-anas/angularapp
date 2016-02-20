@@ -38,6 +38,8 @@ app.config(function($routeProvider) {
   $routeProvider.when('/drag',          {templateUrl: 'content/drag.html', reloadOnSearch: false});
   $routeProvider.when('/drag2',         {templateUrl: 'content/drag2.html', reloadOnSearch: false});
   $routeProvider.when('/carousel',      {templateUrl: 'content/carousel.html', reloadOnSearch: false});
+
+
 });
 
 // 
@@ -260,7 +262,8 @@ app.controller('MainController', function($rootScope, $scope, $http){
   };
 
 
-$http.get('http://dev.learninghealth.io:8080/bonita/API/bpm/humanTask?p=0&c=5&d=rootContainerId&f=user_id%3D101&f=state%3Dready').
+$http.get('/api/bonita/API/bpm/humanTask?p=0&c=5&d=rootContainerId&f=user_id%3D101&f=state%3Dready').
+// $http.get('http://dev.learninghealth.io:8080/bonita/API/bpm/humanTask?p=0&c=5&d=rootContainerId&f=user_id%3D101&f=state%3Dready').
         success(function(data) {
             $scope.greeting = data;
         });

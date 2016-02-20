@@ -1,0 +1,52 @@
+<div ui-content-for="title">
+  <span>Human Tasks</span>
+</div>
+
+<div ng-controller="TasksController" class="scrollable">
+    <div class="scrollable-content">
+        <div class="section" ng-init="initialCopy = humanTasks">
+            <table st-safe-src="humanTasks" st-table="initialCopy" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th st-sort="id" st-sort-default="true"> ID </th>
+                        <th st-sort="displayName"> Task Name </th>
+                        <th st-sort="dueDate"> Due Date </th>
+                        <th st-sort="state"> State </th>
+                        <th > Description </th>
+                    </tr>
+                    
+                    <tr>
+                        <th>
+                            <input st-search="id" placeholder="Filter ID" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th>
+                            <input st-search="displayName" placeholder="Filter Name" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th></th>
+                        <th>
+                            <input st-search="state" placeholder="Filter State" class="input-sm form-control" type="search"/>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr ng-repeat="task in initialCopy">
+                        <td>{{task.id}}</td>
+                        <td>{{task.displayName}}</td>
+                        <td>{{task.dueDate | simpleDate}}</td>
+                        <td class="text-capitalize" ng-class="{
+                                    'text-success': task.state == 'ready',
+                                    'text-danger': task.state != 'ready' 
+                            }">
+                            {{task.state}}
+                        </td>
+                        <td>{{task.description | emptyDescription}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </div>
+    </div>
+</div>

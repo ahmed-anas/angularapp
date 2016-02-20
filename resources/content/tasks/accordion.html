@@ -1,0 +1,40 @@
+<div ui-content-for="title">
+  <span>Human Tasks</span>
+</div>
+
+<div ng-controller="TasksController" class="scrollable">
+    <div class="scrollable-content">
+        <div class="section">
+  
+
+
+            <div class="panel-group" ng-init="activeTabs = []">
+                <div class="panel panel-default" ng-repeat="task in humanTasks">
+                    <div class="panel-heading"  ng-click="activeTabs.indexOf(task.id) >=0?activeTabs.splice(activeTabs.indexOf(task.id),1):activeTabs.push(task.id)"  >
+
+                        <h4 class="panel-title clearfix">
+                            {{task.displayName}} | {{task.dueDate | simpleDate}}
+                            
+                            <span class="pull-right">
+                                State: 
+                                <span class="text-capitalize"
+                                    ng-class="{
+                                        'text-success': task.state == 'ready',
+                                        'text-danger': task.state != 'ready' 
+                                    }">
+                                    {{task.state}}
+                                </span>
+                            </span>
+                        </h4>
+                    </div>
+
+                    <div ng-if="activeTabs.indexOf(task.id) >= 0">
+                        <div class="panel-body">
+                        {{task.description | emptyDescription}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

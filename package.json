@@ -1,0 +1,23 @@
+{
+  "name": "learning-health",
+  "version": "1.0.1",
+  "description": "Learning Health",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmed-anas/angularapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmed-anas/angularapp/issues"
+  },
+  "homepage": "https://github.com/ahmed-anas/angularapp#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "request": "^2.69.0"
+  }
+}
