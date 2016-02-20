@@ -1,7 +1,7 @@
 var debug = require('debug')('server');
 
 
-var PORT_TO_USE = 3000;
+var PORT_TO_USE = normalizePort(process.env.PORT || 3000);
 
 var express = require('express');
 var path = require('path');
@@ -15,9 +15,6 @@ var remoteCaller =  require('./remote_caller.js');
 app.use('/api', remoteCaller);
 
 var server = http.createServer(app);
-
-server.listen(PORT_TO_USE);
-
 
 server.listen(PORT_TO_USE);
 server.on('error', onError);
