@@ -1,7 +1,7 @@
 var debug = require('debug')('server');
 
 
-var PORT_TO_USE = normalizePort(process.env.PORT || 3000);
+var PORT_TO_USE = process.env.PORT || 3000;
 
 var express = require('express');
 var path = require('path');
